@@ -1,58 +1,33 @@
 #include <bits\stdc++.h>
 using namespace std;
+
 int main (){
     int t;
     cin>>t;
     while(t--){
-        int n,water=0,cover=0;
+        //Inputs
+        long long n;
         cin>>n;
-        string s;
+        vector<long long> b(n),a;
         for(int i=0;i<n;i++){
-            char ch;
-            cin>>ch;
-            if(ch=='#'&&water<3){
-                water=0;
+            cin>>b[i];
+        }
+
+        //Logic
+        a.push_back(b[0]);
+        for(int i=1;i<n;i++){
+            if(b[i]>=b[i-1]){
+                a.push_back(b[i]);
             }
-            else if(ch=='.'){
-                water++;
-                cover++;
+            else{
+                a.push_back(b[i]);
+                a.push_back(b[i]);
             }
         }
-        if(water>=3){
-            cout<<2<<"\n";
+        cout<<a.size()<<endl;
+        for(int i=0;i<a.size();i++){
+            cout<<a[i]<<" ";
         }
-        else{
-            cout<<cover<<"\n";
-        }
+        cout<<endl;
     }
 }
-
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main() {
-//     int t;
-//     cin>>t;
-//     while (t--) {
-//         int n;cin>>n;
-//         string s;cin>>s;
-//         int k=0;
-//         int a1=0;
-//         for (int i=0;i<n;i++) {
-//             if (s[i]=='.') {
-//                 k=k+1;
-//                 if (k==3) {
-//                     a1=2;
-//                     break;
-//                 }
-//                 else {
-//                     a1=a1+1;
-//                 }
-//             }
-//             else {
-//                 k=0;
-//             }
-//         }
-//         cout<<a1<<endl;
-//     }
-// }
-

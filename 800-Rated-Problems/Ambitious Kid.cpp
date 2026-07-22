@@ -5,11 +5,15 @@ int main(){
     //input
     int n;
     cin>>n;
-    vector<int> v(n);
+    vector<int> a(n);
     for(int i=0;i<n;i++){
-        cin>>v[i];
+        cin>>a[i];
     }
-    //logic
-    int MIN=min(v.begin(), v.end());
 
+    //logic
+    int MinOps = INT_MAX;
+    for(int i=0;i<n;i++){
+        MinOps = min(MinOps, abs(a[i]));
+    }
+    cout<<MinOps<<endl;
 }
