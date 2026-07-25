@@ -1,24 +1,28 @@
-#include <bits\stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main (){
+int main() {
     int t;
-    cin>>t;
-    while(t--){
-        //Inputs    
-        long long n,k;
-        cin>>n>>k>>endl;
+    cin >> t;                     
+    while (t--) {
+        //Inputs
+        int n, k;
+        cin >> n >> k;            
         string s;
-        cin>>s;
-        
-        //Logic
-        long long count=0;
-        if(n==2 && k==0){
-            cout<<"NO\n";
-        }
-        else if(){
-            
-        }
+        cin >> s;                 
 
+        //Logic
+        int freq[26] = {0};
+        int oddCount = 0;
+        for (int i = 0; i < n; i++) {
+            int index = s[i] - 'a';
+            freq[index]++;
+        }
+        for (int i = 0; i < 26; i++) {
+            if (freq[i] % 2 == 1) oddCount++;
+        }
+        if (oddCount <= k + 1)cout << "YES\n";
+        else cout << "NO\n";
     }
+    return 0;
 }
