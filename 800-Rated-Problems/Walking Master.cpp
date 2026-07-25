@@ -6,10 +6,21 @@ int main(){
     cin >> t;
     while(t--){
         //input
-        long long sx,sy,dx,dy;
-        cin >> sx >> sy >> dx >> dy;
-        if(dy<sy){cout<<-1<<"\n";}
-        
+        long long a,b,c,d;
+        cin >> a >> b >> c >> d;
 
+        //logic
+        if(d<b){
+            cout<<-1<<"\n";
+            continue;
+        }
+        int moves=d-b;
+        a+=moves;
+        if((a<c)){
+            cout<<-1<<"\n";
+            continue;
+        }
+        moves+=(a-c);
+        cout<<moves<<"\n";
     }
 }
