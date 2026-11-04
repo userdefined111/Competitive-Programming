@@ -4,26 +4,26 @@ int main() {
     int t;
     cin>>t;
     while (t--) {
-        int n;cin>>n;
-        string s;cin>>s;
-        int k=0;
-        int a1=0;
-        for (int i=0;i<n;i++) {
-            if (s[i]=='.') {
-                k=k+1;
-                if (k==3) {
-                    a1=2;
+        long long n; cin>>n;
+        string s; cin>>s;
+        long long ans=0, count=0;
+        
+        for (int i=0;i<n;i++){
+            if(s[i]=='.'){
+                count++;
+                if(count==3){
+                    ans=2;
                     break;
                 }
-                else {
-                    a1=a1+1;
+                else{
+                    ans++;
                 }
             }
-            else {
-                k=0;
+            else{
+                count=0;
             }
         }
-        cout<<a1<<endl;
+        cout<<ans<<endl;
     }
 }
 
